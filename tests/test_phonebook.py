@@ -8,6 +8,7 @@ def test_phonebook_contains_all_names(phonebook):
   phonebook.add("bob", "1234")
   assert 'bob' in phonebook.names()
 
+@pytest.mark.slow
 def test_missing_name_raises_error(phonebook):
   with pytest.raises(KeyError):
     phonebook.lookup('bob')
